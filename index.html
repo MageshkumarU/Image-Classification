@@ -6,6 +6,10 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Image Classifier</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <!-- Load the latest version of TensorFlow.js -->
     <script src="https://unpkg.com/@tensorflow/tfjs"></script>
     <script src="https://unpkg.com/@tensorflow-models/mobilenet"></script>
@@ -13,17 +17,45 @@
 </head>
 
 <body>
-    <div id="console"></div>
-    <!-- Add an image that we will use to test
+    <div class="container">
+        <div class="text-center">
+            <h1>Image Classficaion using TensorFlow.js</h1>
+        </div>
+        <div class="row py-2">
+            <div class="col text-center">
+                <div id="console"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <video autoplay playsinline muted id="webcam" width="224" height="224"></video>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <button class="btn-class btn btn-outline-info mx-auto" id="class-a">Add A</button>
+                <button class="btn-class btn btn-outline-info mx-auto" id="class-b">Add B</button>
+                <button class="btn-class btn btn-outline-info mx-auto" id="class-c">Add C</button>
+                <button class="btn btn-outline-danger mx-auto" id="webcam-btn" onclick="camera()">Stop</button>
+            </div>
+        </div>
+        <!-- Add an image that we will use to test
     <img id="img" crossOrigin src="https://i.imgur.com/JlUvsxa.jpg" width=227 height=227 />
     -->
-    <video autoplay playsinline muted id="webcam" width="224" height="224"></video>
-    <button class="btn-class" id="class-a">Add A</button>
-    <button class="btn-class" id="class-b">Add B</button>
-    <button class="btn-class" id="class-c">Add C</button>
-    <button id="webcam-btn" onclick="camera()">Stop</button>
+    </div>
+
     <!-- Load index.js after the content of the page -->
     <script src="static/js/index.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

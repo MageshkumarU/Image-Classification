@@ -85,8 +85,8 @@ async function predict() {
 
       const classes = ['A', 'B', 'C'];
       document.getElementById('console').innerText = `
-       prediction: ${classes[result.classIndex]}\n
-       probability: ${result.confidences[result.classIndex]}
+       Prediction: ${classes[result.classIndex]}\n
+       Probability: ${result.confidences[result.classIndex]}
      `;
     }
 
@@ -109,15 +109,19 @@ function camera() {
       elems[i].disabled = true;
     }
     btn.innerHTML = "Start";
+    btn.classList.remove("btn-outline-danger");
+    btn.classList.add("btn-outline-success");
   } else {
-    vdo.style.display = "block";
-    result.style.display = "block";
+    vdo.style.display = "inline";
+    result.style.display = "inline";
     setupWebcam();
     btn.innerHTML = "Stop";
     for (var i = 0; i < elems.length; i++) {
       elems[i].disabled = false;
     }
     predict();
+    btn.classList.remove("btn-outline-success");
+    btn.classList.add("btn-outline-danger");
   }
 }
 
